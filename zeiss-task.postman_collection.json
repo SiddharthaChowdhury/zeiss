@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "1b94e39d-4773-495f-a227-a977df9a8d42",
+		"name": "zeiss-task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Fetch machine by machine_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:1337/ce0753da-1b8e-4ffc-b346-3158eec5b9d8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"ce0753da-1b8e-4ffc-b346-3158eec5b9d8"
+					]
+				},
+				"description": "**sample**: `http://localhost:1337/ce0753da-1b8e-4ffc-b346-3158eec5b9d8`"
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch all machines report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:1337/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"all"
+					]
+				},
+				"description": "**url**: `http://localhost:1337/all`"
+			},
+			"response": []
+		}
+	]
+}
