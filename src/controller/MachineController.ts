@@ -11,7 +11,28 @@ class MachineController {
         } catch (error) {
             throw error;
         }
+    };
+
+    public getMachineRecord = async (req:any, res: any) => {
+        const {params:{machine_id}} = req;
+
+        if(!machine_id) {
+            res.status(400);
+            return res.json({error: `Machine Id is missing from the request url`})
+        }
+
+        try {
+            const records = await Machine.find({machine_id});
+            res.status(200);
+            return res.json({
+                data: records
+            });
+        } catch (err) {
+            res.status(500);
+            return res.json({error: `Internal server error!`});
+        }
     }
+
 }
 
 export const machineController = new MachineController();
