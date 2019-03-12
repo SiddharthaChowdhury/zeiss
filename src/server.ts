@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import {machineController} from "./controller/MachineController";
 
 
 const WebSocket = require('ws');
@@ -12,7 +13,7 @@ app.use(cors({origin: '*'}));
 
 ws.addEventListener("message", (event: MessageEvent) => {
     const {data} = event;
-    console.log(data)
+    machineController.setMachineRecord(data)
 });
 
 mongoose.connect(`mongodb://${process.env.REMOTE_USER}:${process.env.REMOTE_PASSWORD}@ds161710.mlab.com:61710/review-work`, { useNewUrlParser: true })

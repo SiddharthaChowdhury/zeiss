@@ -9,4 +9,4 @@ let MachineSchema = new Schema({
     status: {type: String, required: true},
 });
 
-module.exports = mongoose.model('Machine', MachineSchema);
+export default mongoose.model('Machine', MachineSchema);
