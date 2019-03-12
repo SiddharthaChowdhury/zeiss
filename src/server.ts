@@ -10,6 +10,8 @@ const ws = new WebSocket('ws://machinestream.herokuapp.com/ws');
 const PORT = 1337;
 // only in development ENV
 app.use(cors({origin: '*'}));
+
+app.get('/all', (req, res) => machineController.getAllMachineRecord(req, res));
 app.get('/:machine_id', (req, res) => machineController.getMachineRecord(req, res));
 
 ws.addEventListener("message", (event: MessageEvent) => {

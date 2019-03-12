@@ -13,7 +13,7 @@ class MachineController {
         }
     };
 
-    public getMachineRecord = async (req:any, res: any) => {
+    public getMachineRecord = async (req: any, res: any) => {
         const {params:{machine_id}} = req;
 
         if(!machine_id) {
@@ -23,6 +23,19 @@ class MachineController {
 
         try {
             const records = await Machine.find({machine_id});
+            res.status(200);
+            return res.json({
+                data: records
+            });
+        } catch (err) {
+            res.status(500);
+            return res.json({error: `Internal server error!`});
+        }
+    };
+
+    public getAllMachineRecord = async (req: any, res: any) => {
+        try {
+            const records = await Machine.find();
             res.status(200);
             return res.json({
                 data: records
