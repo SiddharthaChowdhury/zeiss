@@ -31,8 +31,7 @@ class MachineController {
             res.status(500);
             return res.json({error: `Internal server error!`});
         }
-    }
-
+    };
 }
 
 export const machineController = new MachineController();
